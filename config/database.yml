@@ -87,18 +87,4 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: archimate_v2_production
-    username: archimate_v2
-    password: <%= ENV["ARCHIMATE_V2_DATABASE_PASSWORD"] %>
-  cache:
-    <<: *primary_production
-    database: archimate_v2_production_cache
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: archimate_v2_production_queue
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    database: archimate_v2_production_cable
-    migrations_paths: db/cable_migrate
+    url: <%= ENV["DATABASE_URL"] %>
