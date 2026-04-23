@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   get "top", to: "static_pages#top"
   get "welcome", to: "static_pages#welcome"
   get "terms", to: "static_pages#terms"
