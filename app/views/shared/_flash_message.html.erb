@@ -1,0 +1,9 @@
+<% flash.each do |type, message| %>
+  <% next if message.blank? %>
+  <% flash_class = type.to_sym == :notice ? "bg-second text-first" : "bg-seventh text-white" %>
+  <div class="px-4 pt-4">
+    <div class="mx-auto max-w-4xl rounded-2xl px-5 py-3 text-sm shadow-sm <%= flash_class %>">
+      <%= message %>
+    </div>
+  </div>
+<% end %>
