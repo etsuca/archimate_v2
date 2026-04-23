@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  authenticated :user do
+    root "static_pages#top", as: :authenticated_root
+  end
+
   devise_for :users
 
   get "top", to: "static_pages#top"
