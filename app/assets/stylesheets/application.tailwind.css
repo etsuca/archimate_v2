@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@theme {
+  --color-first: #1d1d1f;
+  --color-second: #f4e464;
+  --color-third: #f3f4f6;
+  --color-fourth: #b2b2b2;
+  --color-fifth: #0e3068;
+  --color-sixth: #a6f147;
+  --color-seventh: #c96040;
+  --font-open_sans: "Open Sans", sans-serif;
+  --spacing-144: 36rem;
+}

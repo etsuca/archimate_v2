@@ -1,2 +1,30 @@
-<h1>StaticPages#top</h1>
-<p>Find me in app/views/static_pages/top.html.erb</p>
+<% content_for :title, "About | archimate" %>
+
+<div class="flex flex-col h-screen md:flex-row items-end">
+  <div class="w-full md:w-3/4 h-full relative">
+    <%= image_tag "lp_top.jpg", alt: "archimate preview image", class: "absolute inset-0 object-cover object-center h-full w-full" %>
+  </div>
+  <div class="w-full md:w-144 px-4 md:pt-0 pt-4">
+    <h1 class="text-3xl md:text-5xl mb-4">archimate v2</h1>
+    <div class="relative">
+      <p class="mb-4">旧 archimate の公開ページデザインを Rails 8 上で再現しながら、次の段階で認証や投稿機能を戻していくための移植版です。</p>
+      <p>まずは公開導線から整え、見た目と体験を参照元に近づけています。</p>
+      <div class="md:static bottom-5 w-full text-white">
+        <div class="flex flex-row-reverse md:flex-col mt-8 mb-28 text-center justify-center items-center">
+          <%= link_to root_path, class: "flex items-center justify-center bg-third border border-seventh text-seventh h-14 w-14 md:h-fit md:w-full md:mb-8 mx-6 rounded-full hover:scale-105 hover:drop-shadow-lg cursor-pointer" do %>
+            <span class="md:hidden text-lg">W</span>
+            <div class="hidden md:block py-3">
+              <p>Welcome</p>
+            </div>
+          <% end %>
+          <%= link_to terms_path, class: "flex items-center justify-center bg-third md:bg-first border border-first text-first md:text-white h-14 w-14 md:w-full md:h-fit mx-6 rounded-full hover:scale-105 hover:drop-shadow-lg cursor-pointer" do %>
+            <span class="md:hidden text-lg">T</span>
+            <div class="hidden md:block py-3">
+              <p>Terms</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
