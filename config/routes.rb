@@ -4,12 +4,14 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: {
-    registrations: "users/registrations"
+    registrations: "users/registrations",
+    sessions: "users/sessions"
   }
 
   devise_scope :user do
     get "registrations/edit_password", to: "users/registrations#edit_password"
     put "registrations/update_password", to: "users/registrations#update_password"
+    post "users/guest_login", to: "users/sessions#guest_login", as: :users_guest_login
   end
 
   resource :user, only: :show
