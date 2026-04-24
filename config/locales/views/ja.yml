@@ -46,3 +46,7 @@ ja:
       new:
         title: ロック解除メールを再送する
         submit: ロック解除メールを再送する
+  users:
+    show:
+      title: アカウント
+      edit_password: パスワードを変更する

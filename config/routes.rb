@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     put "registrations/update_password", to: "users/registrations#update_password"
   end
 
+  resource :user, only: :show
   get "top", to: "static_pages#top"
   get "welcome", to: "static_pages#welcome"
   get "terms", to: "static_pages#terms"

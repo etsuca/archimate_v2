@@ -6,9 +6,11 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
-    "build:css": "./node_modules/.bin/tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
+    "build:css": "./node_modules/.bin/tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
+    "copy:fontawesome": "mkdir -p app/assets/builds/webfonts && cp -R node_modules/@fortawesome/fontawesome-free/webfonts/* app/assets/builds/webfonts/"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.2.0",
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.23",
     "@tailwindcss/cli": "latest",

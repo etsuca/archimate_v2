@@ -1,8 +1,16 @@
 <% content_for :title, "#{t('.title')} | archimate" %>
-<h2 class="px-16 pt-16 text-center text-base md:text-xl"><%= t(".title") %></h2>
-<section>
-  <div class="p-12 md:p-24">
-    <div class="max-w-md mx-auto">
+<div class="container mx-auto">
+  <div class="max-w-md mx-auto px-4">
+    <section>
+      <div class="flex relative justify-center items-center py-12 md:pt-24">
+        <h2 class="text-base md:text-xl"><%= t(".title") %></h2>
+        <%= link_to user_path, class: "absolute right-0 text-xl" do %>
+          <span class="fa-stack">
+            <i class="fa-solid fa-rotate-left text-2xl fa-stack-1x"></i>
+          </span>
+        <% end %>
+      </div>
+
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -27,6 +35,6 @@
 
       <%= link_to t(".edit_password"), registrations_edit_password_path, class: "block mt-4 text-end text-xs sm:text-sm text-neutral-600 hover:text-first" %>
       <%= link_to t(".delete"), registration_path(resource_name), data: { turbo_method: :delete, turbo_confirm: t("defaults.messages.user_delete_confirm") }, class: "block mt-2 mb-12 text-end text-xs sm:text-sm text-neutral-600 hover:text-first" %>
-    </div>
+    </section>
   </div>
-</section>
+</div>
