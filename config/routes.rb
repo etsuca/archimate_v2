@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
 
+  devise_scope :user do
+    get "registrations/edit_password", to: "users/registrations#edit_password"
+    put "registrations/update_password", to: "users/registrations#update_password"
+  end
+
   get "top", to: "static_pages#top"
   get "welcome", to: "static_pages#welcome"
   get "terms", to: "static_pages#terms"

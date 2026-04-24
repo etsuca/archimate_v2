@@ -22,6 +22,12 @@ ja:
         edit_password: パスワードを変更する
         delete: アカウント削除
         pending_reconfirmation: "確認待ちのメールアドレス: %{email}"
+      edit_password:
+        title: パスワードを変更
+        current_password: 現在のパスワード
+        new_password: 新しいパスワード
+        confirm_new_password: 新しいパスワード (確認)
+        submit: 更新する
     passwords:
       new:
         title: パスワードリセット
