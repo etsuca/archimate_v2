@@ -10,12 +10,4 @@
   <% if devise_mapping.recoverable? && controller_name != "passwords" && controller_name != "registrations" %>
     <p><%= link_to t("devise.shared.links.forgot_your_password"), new_password_path(resource_name), class: "hover:text-first" %></p>
   <% end %>
-
-  <% if devise_mapping.confirmable? && controller_name != "confirmations" %>
-    <p><%= link_to t("devise.shared.links.didn_t_receive_confirmation_instructions"), new_confirmation_path(resource_name), class: "hover:text-first" %></p>
-  <% end %>
-
-  <% if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != "unlocks" %>
-    <p><%= link_to t("devise.shared.links.didn_t_receive_unlock_instructions"), new_unlock_path(resource_name), class: "hover:text-first" %></p>
-  <% end %>
 </div>

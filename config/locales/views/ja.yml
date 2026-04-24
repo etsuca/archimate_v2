@@ -21,7 +21,6 @@ ja:
         update: 更新する
         edit_password: パスワードを変更する
         delete: アカウント削除
-        pending_reconfirmation: "確認待ちのメールアドレス: %{email}"
       edit_password:
         title: パスワードを変更
         current_password: 現在のパスワード
@@ -38,14 +37,6 @@ ja:
         new_password: 新しいパスワード
         confirm_new_password: 新しいパスワード (確認)
         submit: パスワードを変更
-    confirmations:
-      new:
-        title: 確認メールを再送する
-        submit: 確認メールを再送する
-    unlocks:
-      new:
-        title: ロック解除メールを再送する
-        submit: ロック解除メールを再送する
   users:
     show:
       title: アカウント

@@ -24,12 +24,6 @@
           <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "block w-full px-5 py-3 text-neutral-600 placeholder-gray-300 transition duration-200 border border-transparent rounded-full bg-gray-50 focus:border-transparent focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300", required: true %>
         </div>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <p class="mt-4 text-sm text-neutral-600">
-            <%= t(".pending_reconfirmation", email: resource.unconfirmed_email) %>
-          </p>
-        <% end %>
-
         <%= f.submit t(".update"), class: "mt-16 py-4 w-full bg-first text-white transition duration-200 hover:scale-105 rounded-full cursor-pointer" %>
       <% end %>
 
