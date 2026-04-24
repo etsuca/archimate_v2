@@ -7,6 +7,11 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="space-y-2">
+          <%= f.label :name, User.human_attribute_name(:name), class: "block text-md text-neutral-600" %>
+          <%= f.text_field :name, placeholder: "Name", class: "block w-full px-5 py-3 text-neutral-600 placeholder-gray-300 transition duration-200 border border-transparent rounded-full bg-gray-50 focus:border-transparent focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300", required: true %>
+        </div>
+
+        <div class="space-y-2">
           <%= f.label :email, User.human_attribute_name(:email), class: "block text-md text-neutral-600" %>
           <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "block w-full px-5 py-3 text-neutral-600 placeholder-gray-300 transition duration-200 border border-transparent rounded-full bg-gray-50 focus:border-transparent focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300", required: true %>
         </div>
