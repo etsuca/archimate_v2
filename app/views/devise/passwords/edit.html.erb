@@ -1,5 +1,5 @@
-<% content_for :title, "New password | archimate" %>
-<h2 class="px-16 pt-16 text-center text-base md:text-xl">新しいパスワードを設定</h2>
+<% content_for :title, "#{t('.title')} | archimate" %>
+<h2 class="px-16 pt-16 text-center text-base md:text-xl"><%= t(".title") %></h2>
 <section>
   <div class="p-12 md:p-24">
     <div class="max-w-md mx-auto">
@@ -8,19 +8,19 @@
         <%= f.hidden_field :reset_password_token %>
 
         <div class="space-y-2 text-md text-neutral-600">
-          <%= f.label :password, "新しいパスワード" %>
+          <%= f.label :password, t(".new_password") %>
           <% if @minimum_password_length %>
-            <span>(<%= @minimum_password_length %>文字以上)</span>
+            <span>(<%= @minimum_password_length %><%= t("defaults.characters_minimum") %>)</span>
           <% end %>
           <%= f.password_field :password, placeholder: "New Password", autocomplete: "new-password", class: "block w-full px-5 py-3 text-neutral-600 placeholder-gray-300 transition duration-200 border border-transparent rounded-full bg-gray-50 focus:border-transparent focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300", required: true %>
         </div>
 
         <div class="space-y-2">
-          <%= f.label :password_confirmation, "新しいパスワード (確認)", class: "mt-8 block text-md text-neutral-600" %>
+          <%= f.label :password_confirmation, t(".confirm_new_password"), class: "mt-8 block text-md text-neutral-600" %>
           <%= f.password_field :password_confirmation, placeholder: "Confirm New Password", autocomplete: "new-password", class: "block w-full px-5 py-3 text-neutral-600 placeholder-gray-300 transition duration-200 border border-transparent rounded-full bg-gray-50 focus:border-transparent focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300", required: true %>
         </div>
 
-        <%= f.submit "パスワードを変更", class: "mt-16 py-4 w-full bg-first text-white transition duration-200 hover:scale-105 rounded-full cursor-pointer" %>
+        <%= f.submit t(".submit"), class: "mt-16 py-4 w-full bg-first text-white transition duration-200 hover:scale-105 rounded-full cursor-pointer" %>
       <% end %>
     </div>
   </div>
