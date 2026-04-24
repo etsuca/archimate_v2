@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  before_action :require_authenticated_user, only: :top
   before_action :redirect_authenticated_user_from_welcome, only: :welcome
 
   def top
@@ -14,6 +15,10 @@ class StaticPagesController < ApplicationController
   end
 
   private
+
+  def require_authenticated_user
+    redirect_to root_path unless user_signed_in?
+  end
 
   def redirect_authenticated_user_from_welcome
     redirect_to authenticated_root_path if user_signed_in?

@@ -1,0 +1,11 @@
+<% errors_target = local_assigns[:resource] || local_assigns[:object] %>
+<% if errors_target&.errors&.any? %>
+  <div class="mb-8 rounded-2xl bg-seventh px-5 py-4 text-sm text-white shadow-sm">
+    <p class="font-semibold">入力内容を確認してください。</p>
+    <ul class="mt-2 space-y-1">
+      <% errors_target.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
