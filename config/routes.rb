@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     root "static_pages#top", as: :authenticated_root
   end
 
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: "users/registrations"
+  }
 
   get "top", to: "static_pages#top"
   get "welcome", to: "static_pages#welcome"
