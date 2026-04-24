@@ -1,0 +1,34 @@
+<% content_for :title, "#{t('.title')} | archimate" %>
+<div class="container mx-auto">
+  <div class="max-w-md mx-auto px-4">
+    <section>
+      <div class="flex relative justify-center items-center py-12 md:pt-24">
+        <h2 class="text-base md:text-xl"><%= t(".title") %></h2>
+        <%= link_to user_path, class: "absolute right-0 text-xl" do %>
+          <span class="fa-stack">
+            <i class="fa-solid fa-rotate-left text-2xl fa-stack-1x"></i>
+          </span>
+        <% end %>
+      </div>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="space-y-2">
+          <%= f.label :name, User.human_attribute_name(:name), class: "block text-md text-neutral-600" %>
+          <%= f.text_field :name, placeholder: "Name", class: "block w-full px-5 py-3 text-neutral-600 placeholder-gray-300 transition duration-200 border border-transparent rounded-full bg-gray-50 focus:border-transparent focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300", required: true %>
+        </div>
+
+        <div class="space-y-2">
+          <%= f.label :email, User.human_attribute_name(:email), class: "mt-8 block text-md text-neutral-600" %>
+          <%= f.email_field :email, autocomplete: "email", placeholder: "Email", class: "block w-full px-5 py-3 text-neutral-600 placeholder-gray-300 transition duration-200 border border-transparent rounded-full bg-gray-50 focus:border-transparent focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300", required: true %>
+        </div>
+
+        <%= f.submit t(".update"), class: "mt-16 py-4 w-full bg-first text-white transition duration-200 hover:scale-105 rounded-full cursor-pointer" %>
+      <% end %>
+
+      <%= link_to t(".edit_password"), registrations_edit_password_path, class: "block mt-4 text-end text-xs sm:text-sm text-neutral-600 hover:text-first" %>
+      <%= link_to t(".delete"), registration_path(resource_name), data: { turbo_method: :delete, turbo_confirm: t("defaults.messages.user_delete_confirm") }, class: "block mt-2 mb-12 text-end text-xs sm:text-sm text-neutral-600 hover:text-first" %>
+    </section>
+  </div>
+</div>

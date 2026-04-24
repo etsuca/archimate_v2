@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  authenticated :user do
+    root "static_pages#top", as: :authenticated_root
+  end
+
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    sessions: "users/sessions"
+  }
+
+  devise_scope :user do
+    get "registrations/edit_password", to: "users/registrations#edit_password"
+    put "registrations/update_password", to: "users/registrations#update_password"
+    post "users/guest_login", to: "users/sessions#guest_login", as: :users_guest_login
+  end
+
+  resource :user, only: :show
   get "top", to: "static_pages#top"
   get "welcome", to: "static_pages#welcome"
   get "terms", to: "static_pages#terms"

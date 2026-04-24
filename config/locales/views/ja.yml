@@ -1,0 +1,45 @@
+ja:
+  defaults:
+    characters_minimum: 文字以上
+    messages:
+      logout_confirm: ログアウトしますか？
+      user_delete_confirm: 退会しますか？
+  devise:
+    sessions:
+      new:
+        title: ログイン
+        forget_password: パスワードをお忘れですか？
+        trial: お試しで使う
+        guest_login: ゲストログイン
+        for_beginner: はじめてご利用の方
+        to_register_page: 新規会員登録
+    registrations:
+      new:
+        title: 新規会員登録
+        for_member: 会員登録がお済みの方
+        login: ログインはこちらから
+      edit:
+        title: アカウントを編集
+        update: 更新する
+        edit_password: パスワードを変更する
+        delete: アカウント削除
+      edit_password:
+        title: パスワードを変更
+        current_password: 現在のパスワード
+        new_password: 新しいパスワード
+        confirm_new_password: 新しいパスワード (確認)
+        submit: 更新する
+    passwords:
+      new:
+        title: パスワードリセット
+        login: ログインはこちらから
+        submit: メール送信
+      edit:
+        title: 新しいパスワードを設定
+        new_password: 新しいパスワード
+        confirm_new_password: 新しいパスワード (確認)
+        submit: パスワードを変更
+  users:
+    show:
+      title: アカウント
+      edit_password: パスワードを変更する

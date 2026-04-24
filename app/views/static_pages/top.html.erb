@@ -11,10 +11,10 @@
       <p>まずは公開導線から整え、見た目と体験を参照元に近づけています。</p>
       <div class="md:static bottom-5 w-full text-white">
         <div class="flex flex-row-reverse md:flex-col mt-8 mb-28 text-center justify-center items-center">
-          <%= link_to root_path, class: "flex items-center justify-center bg-third border border-seventh text-seventh h-14 w-14 md:h-fit md:w-full md:mb-8 mx-6 rounded-full hover:scale-105 hover:drop-shadow-lg cursor-pointer" do %>
-            <span class="md:hidden text-lg">W</span>
+          <%= link_to destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか？" }, class: "flex items-center justify-center bg-third border border-seventh text-seventh h-14 w-14 md:h-fit md:w-full md:mb-8 mx-6 rounded-full hover:scale-105 hover:drop-shadow-lg cursor-pointer" do %>
+            <span class="md:hidden text-lg">O</span>
             <div class="hidden md:block py-3">
-              <p>Welcome</p>
+              <p>Logout</p>
             </div>
           <% end %>
           <%= link_to terms_path, class: "flex items-center justify-center bg-third md:bg-first border border-first text-first md:text-white h-14 w-14 md:w-full md:h-fit mx-6 rounded-full hover:scale-105 hover:drop-shadow-lg cursor-pointer" do %>
