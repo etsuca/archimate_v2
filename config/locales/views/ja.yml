@@ -26,6 +26,7 @@ ja:
       edit_password:
         title: パスワードを変更
         current_password: 現在のパスワード
+        guest_user_notice: ゲストユーザーは初回のみ現在のパスワードなしで設定できます。
         new_password: 新しいパスワード
         confirm_new_password: 新しいパスワード (確認)
         submit: 更新する

@@ -4,6 +4,7 @@ class Users::SessionsController < Devise::SessionsController
 
     random_value = SecureRandom.hex
     user = User.create!(
+      guest: true,
       name: "ゲストユーザー",
       email: "guest_#{random_value}@example.com",
       password: Devise.friendly_token.first(20)
