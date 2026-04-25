@@ -8,7 +8,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update_password
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
 
-    resource_updated = resource.update_with_password(password_update_params)
+    resource_updated = if resource.guest_user?
+      resource.update_without_password(password_update_params.except(:current_password).merge(guest: false))
+    else
+      resource.update_with_password(password_update_params)
+    end
+
     yield resource if block_given?
     if resource_updated
       bypass_sign_in resource, scope: resource_name if sign_in_after_change_password?

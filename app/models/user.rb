@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 255 }
 
+  def guest_user?
+    guest?
+  end
+
   def update_without_password(params, *options)
     params.delete(:current_password)
 
